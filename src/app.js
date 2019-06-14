@@ -4,6 +4,8 @@ const express = require('express')
 const app = express()
 const hbs = require('hbs')
 
+const port = process.env.port||3000
+
 //setting the path to directories for Express config
 const publicdir=path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -83,6 +85,6 @@ res.render('error',{
     name:'Harpreet Singh'
 })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("Server is up on 3000")
 })
